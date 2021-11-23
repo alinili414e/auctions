@@ -1,5 +1,5 @@
 import AWS from 'aws-sdk';
-import commonMiddleWare from './lib/commonMiddleWare';
+import commonMiddleWare from '../lib/commonMiddleWare';
 import createError from 'http-errors';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();

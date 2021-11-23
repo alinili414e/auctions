@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 import AWS from 'aws-sdk';
-import commonMiddleWare from './lib/commonMiddleWare';
+import commonMiddleWare from '../lib/commonMiddleWare';
 import createError from 'http-errors';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
@@ -14,6 +14,9 @@ async function createAuction(event, context) {
     title,
     status: 'OPEN',
     createdAt: now.toISOString(),
+    highestBid:{
+      amount:0
+    }
   };
 
 try {
